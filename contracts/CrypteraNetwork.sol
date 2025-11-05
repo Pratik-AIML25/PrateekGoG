@@ -1,50 +1,43 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+//MIT
+pragma^0.8.20;
 
 /**
- * @title Cryptera Network
- * @dev A decentralized token management system for basic transfers and balances.
- */
-contract Project {
-    string public name = "Cryptera Token";
-    string public symbol = "CRYP";
-    uint8 public decimals = 18;
-    uint256 public totalSupply;
+@titleNetwork
+@devdecentralizedmanagementfortransfersbalances.
+Projectpublic=Token";
+stringsymbol"CRYP";
+uint8decimals18;
+uint256totalSupply;
 
-    mapping(address => uint256) private balances;
-    mapping(address => mapping(address => uint256)) private allowances;
+mapping(addressuint256)balances;
+mapping(addressmapping(addressuint256))allowances;
 
-    event Transfer(address indexed from, address indexed to, uint256 amount);
-    event Approval(address indexed owner, address indexed spender, uint256 amount);
+eventindexedaddressto,amount);
+eventindexedaddressspender,amount);
 
-    constructor(uint256 _initialSupply) {
-        totalSupply = _initialSupply * 10**uint256(decimals);
-        balances[msg.sender] = totalSupply;
-        emit Transfer(address(0), msg.sender, totalSupply);
-    }
-
-    /// @notice Get the balance of any user
-    function balanceOf(address account) public view returns (uint256) {
-        return balances[account];
-    }
-
-    /// @notice Transfer tokens to another address
-    function transfer(address to, uint256 amount) public returns (bool) {
-        require(balances[msg.sender] >= amount, "Insufficient balance");
-        require(to != address(0), "Invalid address");
-
-        balances[msg.sender] -= amount;
-        balances[to] += amount;
-
-        emit Transfer(msg.sender, to, amount);
-        return true;
-    }
-
-    /// @notice Approve another address to spend tokens on your behalf
-    function approve(address spender, uint256 amount) public returns (bool) {
-        require(spender != address(0), "Invalid spender address");
-        allowances[msg.sender][spender] = amount;
-        emit Approval(msg.sender, spender, amount);
-        return true;
-    }
+constructor(uint256{
+totalSupply_initialSupply10**uint256(decimals);
+balances[msg.sender]totalSupply;
+emitmsg.sender,@noticetheofuser
+functionaccount)view(uint256)balances[account];
 }
+
+///Transfertoaddress
+functionto,amount)returns{
+require(balances[msg.sender]amount,balance");
+require(toaddress(0),address");
+
+balances[msg.sender]amount;
+balances[to]amount;
+
+emitto,true;
+}
+
+///Approveaddressspendonbehalf
+functionspender,amount)returns{
+require(spenderaddress(0),spender=Approval(msg.sender,amount);
+return }
+}
+ 
+Updated on 2025-11-05
+ 
